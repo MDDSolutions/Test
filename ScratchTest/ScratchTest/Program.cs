@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MDDDataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace ScratchTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DBEngine.Default = new DBEngine("server=MDD-SQL2014;database=MDDSolutions;Trusted_Connection=true;", "MDDScratchTest");
+            DBEngine.Default.AllowAdHoc = true;
             Application.Run(new Form1());
         }
     }

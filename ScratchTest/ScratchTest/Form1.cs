@@ -1,4 +1,5 @@
-﻿using MDDFoundation;
+﻿using MDDDataAccess;
+using MDDFoundation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,9 +21,8 @@ namespace ScratchTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var str = textBox1.Text;
-
-            MessageBox.Show(Foundation.TextBetween(str, "(", ")"));
+            var count = DBEngine.Default.SqlGetScalar<int>("SELECT COUNT(*) FROM dbo.Clients", false);
+            MessageBox.Show($"Count: {count}");
         }
     }
 }
