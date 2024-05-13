@@ -23,7 +23,7 @@ namespace ScratchTest
         private void button1_Click(object sender, EventArgs e)
         {
             var count = DBEngine.Default.SqlGetScalar<int>(textBox1.Text, false);
-            MessageBox.Show($"Count of all the customer's Clients: {count}");
+            MessageBox.Show($"Count of all the Clients: {count}");
         }
 
         private void button2_Click(object sender, EventArgs e)
