@@ -84,6 +84,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\FormsDataAccess\FormsDataAccess.csproj">
+      <Project>{1AEBF0E2-6464-4B56-9E70-2AAA146CC502}</Project>
+      <Name>FormsDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\MDDWinForms\MDDWinForms.csproj">
+      <Project>{AB290871-534F-4F52-8D0E-66868E22FF9F}</Project>
+      <Name>MDDWinForms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Standard\DBEngine\DBEngine.csproj">
       <Project>{B4E41FA3-D3C7-45DC-B870-C35992A88400}</Project>
       <Name>DBEngine</Name>

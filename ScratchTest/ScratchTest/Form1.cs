@@ -1,4 +1,5 @@
-﻿using MDDDataAccess;
+﻿using FormsDataAccess;
+using MDDDataAccess;
 using MDDFoundation;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,16 @@ namespace ScratchTest
         {
             var count = DBEngine.Default.SqlGetScalar<int>("SELECT COUNT(*) FROM dbo.Clients", false);
             MessageBox.Show($"Count: {count}");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var frm = new frmConnectDatabase(DBEngine.Default.ConnectionString.ConnectionString);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                DBEngine.Default = new DBEngine(frm.ConnectionString, "MDDScratchTest");
+                DBEngine.Default.AllowAdHoc = true;
+            }
         }
     }
 }
